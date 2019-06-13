@@ -22,7 +22,7 @@ export default {
       }
   },
   props: {
-    msg: String
+    url: String
   },
   mounted: function() {
     console.log("mounted function ran")
@@ -32,11 +32,11 @@ export default {
 
     axios({
         method: 'get',
-        url: 'https://pokeapi.co/api/v2/pokemon/pikachu',
+        url: vm.url,
         responseType: 'stream'
     })
     .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         vm.pokemon = response.data
     });
 
