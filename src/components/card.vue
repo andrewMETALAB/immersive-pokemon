@@ -1,7 +1,9 @@
 <template>
-  <div class="col-3">
+  <div class="col-3" v-if="pokemon.sprites && pokemon.sprites.front_default">
     <div class="card" style="width: 18rem;">
+        
         <img :src="pokemon.sprites.front_default" class="card-img-top" alt="...">
+        
         <div class="card-body">
             <h5 class="card-title text-capitalize">{{ pokemon.name }}</h5>
             <div>Height: {{pokemon.height * 3.937}} inches</div>

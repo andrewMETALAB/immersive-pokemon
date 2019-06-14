@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
       <h1 class="text-center display-1 my-5">{{ activeType }} Type Pokemon</h1>
-      <span v-for="type in types" class="btn btn-primary m-1" v-on:click="somethingHappened(type.name)">
+      <span v-for="type in types" :key="type.name" class="btn btn-primary m-1" v-on:click="somethingHappened(type.name)">
         {{ type.name }}
       </span>
       <div class="row">
@@ -38,6 +38,7 @@ export default {
     retrievePokemonOfSpecifiedType: function(type) {
       const axios = require('axios');
       const vm = this;
+
       axios({
           method: 'get',
           url: 'https://pokeapi.co/api/v2/type/' + type
