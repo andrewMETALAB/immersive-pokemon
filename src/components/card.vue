@@ -49,5 +49,7 @@ export default {
 .card {
     text-align: center;
     margin-bottom: 30px;
+    border: 3px solid pink;
+    border-radius: 15px;
 }
 </style>
